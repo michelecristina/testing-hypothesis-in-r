@@ -1,0 +1,20 @@
+analysis2data = read.csv("analysis2data.csv")
+
+a = aov(score ~ hanson, data = analysis2data)
+summary(a)
+            Df Sum Sq Mean Sq F value Pr(>F)
+hanson       2  0.362 0.18115   2.355  0.101
+Residuals   86  6.615 0.07692 
+
+
+aggregate(score ~ quiz, data = analysis2data, FUN=function(x) c(mean = mean(x)))
+    quiz     score
+1 quiz 1 0.5666667
+2 quiz 2 0.8666667
+3 quiz 3 0.9137931
+
+aggregate(wrong ~ song, data = analysis2data, FUN=function(x) c(count = sum(x)))
+    song wrong
+1 song 1     7
+2 song 2    20
+3 song 3    18
