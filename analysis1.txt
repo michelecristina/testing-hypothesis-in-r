@@ -1,0 +1,13 @@
+#1#
+dbinom(0, 65, 0.1)
+[1] 0.001061117
+
+
+
+#2#
+potentialmembers = c(1:1000)
+conversions = data.frame(potentialmembers = potentialmembers, p = dbinom(0, potentialmembers, 0.1))
+  
+> subset(conversions, p<0.05)[1,]
+   potentialmembers          p
+29               29 0.04710129
